@@ -227,6 +227,7 @@ print {
 }
 
 .info-section__heading {
+    display: inline-block;
     margin: 0 0 1.75rem;
     font-size: 1.375rem;
     line-height: 1.5rem;
@@ -238,10 +239,10 @@ print {
 .info-section__heading:after {
     content: '';
     display: block;
-    height: 4px;
-    width: 38px;
+    height: .155rem;
+    width: 2em;
     background-color: var(--light-text-color);
-    margin-top: .325em;
+    margin-top: .225em;
     transition: width .5s ease-out;
 }
 .info-section:hover .info-section__heading:after {
@@ -308,6 +309,10 @@ print {
     color: var(--x-light-text-color);
     background: unset;
     cursor: pointer;
+    transition: color .5s ease-out;
+}
+.info-section__link:hover {
+    color: var(--primary-text-color);
 }
 
 .info-section__icon {
