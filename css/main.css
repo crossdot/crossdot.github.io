@@ -54,6 +54,11 @@ print {
     }
 }
 
+a:hover .underline-on-link-hover,
+button:hover .underline-on-link-hover {
+    text-decoration: underline;
+}
+
 html {
     font-size: var(--base-font-size);
 }
@@ -291,7 +296,7 @@ print {
     display: block;
     padding: 0;
     border: unset;
-    text-decoration: underline;
+    text-decoration: none;
     margin-bottom: 1rem;
     font-size: .875rem;
     line-height: 1rem;
