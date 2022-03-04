@@ -148,7 +148,6 @@ print {
     font-size: 3.25rem;
     line-height: 3.5rem;
     font-weight: 600;
-    text-transform: uppercase;
     letter-spacing: .2rem;
 }
 
@@ -183,6 +182,10 @@ print {
     .title__image {
         width: 150px;
         height: 150px;
+    }
+
+    .title__name {
+        text-transform: uppercase;
     }
 }
 
@@ -239,10 +242,10 @@ print {
 .info-section__heading:after {
     content: '';
     display: block;
-    height: .155rem;
+    height: .2rem;
     width: 2em;
     background-color: var(--light-text-color);
-    margin-top: .225em;
+    margin-top: .175em;
     transition: width .5s ease-out;
 }
 .info-section:hover .info-section__heading:after {
@@ -272,7 +275,7 @@ print {
 
 .info-section__text {
     margin-top: 0;
-    margin-bottom: 1.5rem;
+    margin-bottom: 1rem;
     color: var(--light-text-color);
     font-size: .875rem;
     line-height: 1rem;
