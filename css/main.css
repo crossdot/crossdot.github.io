@@ -197,8 +197,8 @@ print {
 print {
     .general-info {
         padding: 38px 38px 0 0;
-        border-top: 2px solid var(--border-color);
-        border-right: 2px solid var(--border-color);
+        border-top: 2px dotted var(--border-color);
+        border-right: 2px dotted var(--border-color);
         box-sizing: border-box;
     }
 }
@@ -210,7 +210,7 @@ print {
 @media (min-width: 750px),
 print {
     .experience-info {
-        border-top: 2px solid var(--border-color);
+        border-top: 2px dotted var(--border-color);
         padding: 38px 0 0 38px;
         box-sizing: border-box;
     }
@@ -224,9 +224,9 @@ print {
     margin-bottom: 80px;
 }
 
-.info-section+.info-section {
+.info-section + .info-section {
     padding-top: 38px;
-    border-top: 2px solid var(--border-color);
+    border-top: 2px dotted var(--border-color);
 }
 
 .info-section__heading {
