@@ -57,6 +57,7 @@ print {
 a:hover .underline-on-link-hover,
 button:hover .underline-on-link-hover {
     text-decoration: underline;
+    text-underline-offset: .275em;
 }
 
 html {
@@ -274,11 +275,13 @@ print {
 }
 
 .info-section__text {
-    margin-top: 0;
-    margin-bottom: 1rem;
     color: var(--light-text-color);
-    font-size: .875rem;
+    font-size: 1rem;
     line-height: 1rem;
+}
+
+.info-section__text + .info-section__text {
+    margin-top: .875rem;
 }
 
 .info-section__text--long {
@@ -322,11 +325,6 @@ print {
     height: 16px;
     margin-left: 14px;
     position: absolute;
-}
-
-.info-section__contact-link {
-    display: block;
-    text-decoration: none;
 }
 
 .info-section__list {
