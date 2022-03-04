@@ -274,6 +274,7 @@ print {
 
 .info-section__text a {
     color: var(--light-text-color);
+    white-space: nowrap;
 }
 
 .info-section__text p {
