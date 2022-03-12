@@ -7,27 +7,7 @@ html {
     --border-color: #d8d8d8;
     --primary-background-color: #fff;
     --secondary-background-color: #f2f5fa;
-}
 
-.dot-spacing::after {
-    content: '';
-    display: block;
-    width: 3px;
-    height: 3px;
-    color: var(--spacer-color);
-    background: currentColor;
-    border-radius: 3px;
-    box-shadow: 20px 0 0 currentColor, -20px 0 0 currentColor;
-    margin: 30px auto 20px;
-}
-
-a:hover .underline-on-link-hover,
-button:hover .underline-on-link-hover {
-    text-decoration: underline;
-    text-underline-offset: .275em;
-}
-
-html {
     font-size: var(--base-font-size);
 }
 
@@ -42,14 +22,19 @@ body {
     display: grid;
     grid-template-columns: auto;
     grid-row-gap: 34px;
-    grid-template-areas: "title""general-info""experience-info";
+    grid-template-areas:
+        "title"
+        "general-info"
+        "experience-info";
     padding: 45px 25px;
     margin: 0;
     box-sizing: border-box;
     max-width: 960px;
     border-radius: 0;
     background: var(--primary-background-color);
-    box-shadow: 0 20px 60px 0 rgba(186, 200, 227, 0.1), 0 16px 36px 0 rgba(186, 200, 227, 0.3);
+    box-shadow:
+        0 20px 60px 0 rgba(186, 200, 227, 0.1),
+        0 16px 36px 0 rgba(186, 200, 227, 0.3);
 }
 
 .title {
@@ -110,15 +95,16 @@ body {
 }
 
 .info-section {
-    margin-bottom: 38px;
+    margin: 18px 0;
+    padding-top: 18px;
 }
 
-.info-section:last-child {
-    margin-bottom: 80px;
+.info-section:first-child {
+    margin-top: 0;
+    padding-top: 0;
 }
 
 .info-section + .info-section {
-    padding-top: 38px;
     border-top: 2px dotted var(--border-color);
 }
 
@@ -210,6 +196,7 @@ body {
     background: unset;
     cursor: pointer;
     transition: color .5s ease-out;
+    white-space: nowrap;
 }
 .info-section__link:hover {
     color: var(--primary-text-color);
@@ -222,12 +209,15 @@ body {
 }
 
 .info-section__list {
-    margin: .5rem 0 1rem 0;
-    padding-left: 1rem;
+    padding: 0;
 }
 
 .info-section__list li {
-    margin: .25rem;
+    display: inline-block;
+    border: 1px solid var(--border-color);
+    border-radius: 3px;
+    margin: 0 5px 5px 0;
+    padding: 2px 4px;
 }
 
 .info-section__remark {
@@ -235,6 +225,26 @@ body {
     font-size: .625rem;
     color: var(--light-text-color);
     text-transform: none;
+}
+
+.dot-spacing::after {
+    content: '';
+    display: block;
+    width: 3px;
+    height: 3px;
+    color: var(--spacer-color);
+    background: currentColor;
+    border-radius: 3px;
+    box-shadow:
+        20px 0 0 currentColor,
+        -20px 0 0 currentColor;
+    margin: 30px auto 20px;
+}
+
+a:hover .underline-on-link-hover,
+button:hover .underline-on-link-hover {
+    text-decoration: underline;
+    text-underline-offset: .275em;
 }
 
 @media (min-width: 450px) {
@@ -257,9 +267,9 @@ body {
         width: 150px;
         height: 150px;
     }
-
-    .title__name {
-        text-transform: uppercase;
+    .info-section {
+        margin: 38px 0;
+        padding-top: 38px;
     }
 }
 
@@ -275,11 +285,27 @@ body {
             "general-info experience-info";
         padding: 45px 65px;
     }
+    .info-section__list {
+        margin: .5rem 0 1rem 0;
+        padding-left: 1rem;
+    }
+    .info-section__list li {
+        display: list-item;
+        border: none;
+        margin: .25rem;
+    }
+    .title__name {
+        text-transform: uppercase;
+    }
     .general-info {
         padding: 38px 38px 0 0;
         border-top: 2px dotted var(--border-color);
         border-right: 2px dotted var(--border-color);
         box-sizing: border-box;
+    }
+    .info-section + .info-section--no-border {
+        padding-top: 0;
+        border: unset;
     }
     .experience-info {
         border-top: 2px dotted var(--border-color);
@@ -297,11 +323,6 @@ body {
         margin-bottom: 56px;
     }
 
-    .info-section+.info-section--no-border {
-        padding-top: 0;
-        border: unset;
-    }
-
     .info-section p {
         break-inside: avoid;
         widows: 2;
@@ -310,12 +331,6 @@ body {
 }
 
 @media print {
-    .break-page {
-        break-before: page;
-    }
-    .hide-on-print {
-        display: none !important;
-    }
     @page {
         margin: 1.2cm .5cm 1.6cm;
         size: A4;
@@ -337,11 +352,15 @@ body {
     }
 
     .container {
-        /* display: block; */
+        display: block;
         box-shadow: unset;
     }
 
     a[href^="http"]:after {
         content: " ("attr(href) ")";
+    }
+
+    .hide-on-print {
+        display: none !important;
     }
 }
