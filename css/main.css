@@ -356,6 +356,10 @@ button:hover .underline-on-link-hover {
         box-shadow: unset;
     }
 
+    .info-section__heading:after {
+        display: none;
+    }
+
     a[href^="http"]:after {
         content: " ("attr(href) ")";
     }
