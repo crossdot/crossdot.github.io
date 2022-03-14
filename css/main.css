@@ -203,9 +203,8 @@ body {
 }
 
 .info-section__icon {
-    height: 16px;
-    margin-left: 14px;
-    position: absolute;
+    width: 1rem;
+    text-align: center;
 }
 
 .info-section__list {
